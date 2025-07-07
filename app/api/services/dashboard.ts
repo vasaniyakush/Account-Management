@@ -18,10 +18,11 @@ export const fetchDashboardData = async (token: string) => {
 
 export const useDashboardData = (token: string, runFunction: boolean) => {
   return useQuery({
-    queryKey: ["summary"],
+    queryKey: ["accounts", "transactions"],
     queryFn: () => fetchDashboardData(token),
     refetchOnWindowFocus: false,
     retry: false,
     enabled: runFunction && token !== "",
+    staleTime: 1000 * 60 * 60, // 5 minutes
   });
 };

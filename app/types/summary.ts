@@ -1,4 +1,5 @@
 import { Account } from "./account";
+import { Transaction } from "./transaction";
 
 export class Summary {
   totalAccounts: number = 0;
@@ -16,4 +17,5 @@ export class Summary {
   totalOtherBalance: string = "0";
   totalCashBalance: string = "0";
   accounts: Array<Account> = [];
+  transactions: Array<Transaction> = [];
 }
